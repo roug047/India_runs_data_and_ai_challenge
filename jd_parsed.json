@@ -1,0 +1,224 @@
+{
+  "job_metadata": {
+    "role_title": "Senior AI Engineer — Founding Team",
+    "company": "Redrob AI",
+    "company_stage": "Series A",
+    "employment_type": "Full-time",
+    "experience_range": {
+      "min": 5,
+      "max": 9,
+      "strict": false,
+      "note": "Range is indicative; judgment and depth matter more than raw years. Candidates outside the band will be considered if other signals are strong."
+    },
+    "location": {
+      "preferred": ["Noida", "Pune"],
+      "acceptable": ["Delhi NCR", "Hyderabad", "Mumbai"],
+      "relocation_allowed": true,
+      "international_candidates": "case_by_case",
+      "visa_sponsorship": false,
+      "office_days": "Tue/Thu in Noida and Pune offices; no fixed cadence required"
+    }
+  },
+
+  "role_mission": {
+    "primary_goal": "Own the intelligence layer of Redrob's product — ranking, retrieval, and matching systems that determine what recruiters see when searching for candidates and what candidates see when searching for roles",
+    "focus_areas": [
+      "Candidate-JD matching at scale",
+      "Ranking and retrieval systems",
+      "Search relevance",
+      "Evaluation infrastructure (offline + online)",
+      "Recruiter experience optimization"
+    ]
+  },
+
+  "hard_requirements": [
+    {
+      "skill": "Embeddings-based retrieval systems",
+      "importance": "critical",
+      "production_required": true,
+      "detail": "Must have deployed to real users and managed embedding drift, index refresh, and retrieval-quality regression in production — not just prototype or tutorial-level use",
+      "examples": ["sentence-transformers", "OpenAI embeddings", "BGE", "E5", "Cohere Embed"]
+    },
+    {
+      "skill": "Vector databases / hybrid search infrastructure",
+      "importance": "critical",
+      "production_required": true,
+      "detail": "Operational experience required — understand the tradeoffs, not just API familiarity",
+      "examples": ["Pinecone", "Weaviate", "Qdrant", "Milvus", "OpenSearch", "Elasticsearch", "FAISS", "pgvector"]
+    },
+    {
+      "skill": "Python",
+      "importance": "critical",
+      "production_required": true,
+      "detail": "Strong Python with code quality discipline — this role writes production code, not demos"
+    },
+    {
+      "skill": "Ranking evaluation frameworks",
+      "importance": "critical",
+      "production_required": true,
+      "detail": "Must have designed and run evaluation frameworks for ranking systems, not just awareness of the metrics",
+      "examples": ["NDCG", "MRR", "MAP", "offline-to-online correlation", "A/B test design and interpretation"]
+    }
+  ],
+
+  "soft_requirements": [
+    {
+      "skill": "LLM fine-tuning",
+      "examples": ["LoRA", "QLoRA", "PEFT", "DPO", "SFT"]
+    },
+    {
+      "skill": "Learning-to-rank models",
+      "examples": ["LambdaMART", "XGBoost ranker", "neural ranking", "pairwise/listwise approaches"]
+    },
+    {
+      "skill": "Domain experience",
+      "examples": ["HR-tech", "recruiting technology", "marketplace products", "search/recommendation platforms"]
+    },
+    {
+      "skill": "Distributed systems / large-scale inference optimization"
+    },
+    {
+      "skill": "External technical validation",
+      "examples": ["open-source contributions", "published papers", "conference talks", "technical blog posts with systems depth"]
+    }
+  ],
+
+  "hard_disqualifiers": [
+    {
+      "condition": "Pure research background with no production deployment",
+      "severity": "reject",
+      "detail": "Academic labs or research-only roles without shipping to real users. Redrob has tried this twice and it failed both times — this is an explicit hiring lesson, not a preference."
+    },
+    {
+      "condition": "AI experience is primarily recent (<12 months) LangChain/OpenAI wrapper projects",
+      "severity": "reject",
+      "detail": "Unless the candidate can demonstrate substantial pre-LLM-era ML production experience. Looking for people who understood retrieval and ranking before it became fashionable."
+    },
+    {
+      "condition": "Has not written production code in the last 18 months",
+      "severity": "reject",
+      "detail": "Applies to candidates who have moved into architecture-only or tech-lead-only roles. This role writes code."
+    }
+  ],
+
+  "strong_negative_signals": [
+    {
+      "condition": "Entire career at consulting/services firms with no product-company experience",
+      "examples": ["TCS", "Infosys", "Wipro", "Accenture", "Cognizant", "Capgemini", "Mphasis", "Tech Mahindra"],
+      "nuance": "Currently at one of these firms is acceptable if prior product-company experience exists"
+    },
+    {
+      "condition": "Primary expertise in CV/speech/robotics without significant NLP/IR exposure",
+      "detail": "Would require re-learning retrieval and ranking fundamentals from scratch"
+    },
+    {
+      "condition": "5+ years exclusively on closed-source systems with no external validation",
+      "detail": "No papers, talks, open-source, or other signal of how they think"
+    },
+    {
+      "condition": "Title-chaser job-hopping pattern",
+      "threshold": "Average tenure <1.5–2 years across career, with moves driven by title progression rather than impact",
+      "detail": "Redrob needs someone planning a 3+ year tenure"
+    },
+    {
+      "condition": "Framework enthusiast profile without systems thinking evidence",
+      "detail": "GitHub full of LangChain tutorials and 'How I used [hot framework]' posts without evidence of reasoning about systems, tradeoffs, or scale"
+    }
+  ],
+
+  "behavioral_requirements": [
+    {"trait": "Shipper mindset over researcher mindset", "weight": "critical", "detail": "Willing to ship a working ranker in a week even if ML is 'obviously suboptimal'; must tilt toward shipper"},
+    {"trait": "Product thinking", "weight": "very_high", "detail": "Must engage with recruiter workflows and eval frameworks, not just code"},
+    {"trait": "Bias for action under ambiguity", "weight": "very_high"},
+    {"trait": "Strong written communication", "weight": "high", "detail": "Async-first team that writes a lot; if writing is painful, the role will be painful"},
+    {"trait": "Comfort with open disagreement and fast decisions", "weight": "high"},
+    {"trait": "Plans 3+ year tenure", "weight": "high"}
+  ],
+
+  "culture_signals": [
+    "shipper_over_researcher", "async_first_writes_well", "disagrees_openly_decides_quickly",
+    "startup_ready", "no_title_chasing", "systems_thinker_not_framework_collector",
+    "product_aware", "plans_3plus_year_tenure", "bias_for_action"
+  ],
+
+  "inferred_signals": {
+    "preferred_company_background": ["Product companies", "AI-native startups", "Search / recommendation platforms", "Marketplace companies"],
+    "less_preferred_background": ["Pure consulting / services", "Research-only labs", "Academic environments"],
+    "preferred_archetype": ["Applied ML engineer who ships products", "Search / retrieval / ranking engineer", "Recommendation systems engineer"],
+    "avoid_archetype": ["Research scientist without production history", "Framework-focused AI engineer", "Architecture-only senior/principal engineer"]
+  },
+
+  "candidate_activity_signals": {
+    "must_be_active": true,
+    "positive": ["Actively seeking roles", "Recent platform activity on Redrob or equivalent", "High recruiter response rate"],
+    "negative": ["No platform activity for 6+ months", "Very low recruiter response rate (<5%)", "Perfect-on-paper but unreachable — treat as not actually available"]
+  },
+
+  "ideal_candidate_profile": {
+    "total_experience_years": "6–8",
+    "applied_ml_years": "4–5",
+    "company_type": "Product companies (not pure services)",
+    "systems_shipped": ["Search", "Ranking", "Retrieval", "Recommendation"],
+    "must_have_strong_opinions_on": ["Hybrid vs dense retrieval", "Offline vs online evaluation", "When to fine-tune vs prompt"],
+    "narrative": "6–8 years total, 4–5 in applied ML/AI at product companies; has shipped at least one end-to-end ranking, search, or recommendation system to real users at meaningful scale; holds defensible opinions on retrieval, evaluation, and LLM integration backed by systems they actually built.",
+    "location": ["Noida", "Pune", "or willing to relocate within India"]
+  },
+
+  "logistics": {
+    "notice_period": {
+      "ideal_days": 30,
+      "buyout_available_days": 30,
+      "acceptable_days": 90,
+      "max_days": 180,
+      "note": "Bar gets meaningfully higher for 30+ day notice candidates"
+    },
+    "salary_band_inr_lpa": null
+  },
+
+  "scoring_weights": {
+    "production_retrieval_and_ranking_experience": 25,
+    "product_company_background": 15,
+    "evaluation_framework_expertise": 15,
+    "current_hands_on_coding": 10,
+    "python_strength": 10,
+    "shipping_velocity_and_execution": 10,
+    "behavioral_and_cultural_fit": 10,
+    "domain_relevance_hrtech_marketplace": 5
+  },
+
+  "ranking_guidance": {
+    "do": [
+      "Reason beyond keyword matching — infer retrieval/ranking expertise from project descriptions and career history",
+      "Prefer shipped production systems over framework familiarity or skill-list keywords",
+      "Prefer demonstrated impact and scale over self-reported proficiency",
+      "Downweight candidates inactive for 6+ months regardless of profile quality",
+      "Detect consulting-firm-only careers and apply strong_negative_signal penalty even if AI keywords are present"
+    ],
+    "avoid": [
+      "Keyword counting on skills section",
+      "Overvaluing LangChain/RAG/GPT-wrapper mentions",
+      "Ignoring behavioral and activity signals",
+      "Treating a perfect skill list as a substitute for career trajectory evidence"
+    ],
+    "trap_awareness": {
+      "keyword_stuffing_is_trap": true,
+      "behavioral_signals_matter": true,
+      "inactive_candidates_downweight": true,
+      "gap_between_jd_says_vs_means": true,
+      "example_false_positive": "Marketing Manager with all AI keywords in skills section — not a fit regardless of list",
+      "example_false_negative": "Candidate who never writes 'RAG' or 'Pinecone' but built a hybrid retrieval system at a product company — strong Tier 1 fit"
+    }
+  },
+
+  "first_90_days": {
+    "weeks_1_3": "Audit existing system (BM25 + rule-based scoring); identify 3–4 highest-leverage improvements",
+    "weeks_4_8": "Ship v2 ranking system with embeddings, hybrid retrieval, and LLM-based re-ranking (architecture is candidate's call); must demonstrably improve recruiter-engagement metrics",
+    "weeks_9_12": "Build evaluation infrastructure — offline benchmarks, online A/B testing, recruiter-feedback loops — so the team can keep improving without flying blind"
+  },
+
+  "jd_summary": {
+    "core_message": "Find an applied AI engineer with production retrieval/ranking experience, strong evaluation rigor, product-company background, current coding ability, and startup execution mindset.",
+    "primary_tradeoff": "Shipper > Researcher",
+    "culture_fit_importance": "Explicitly stated as higher than skills fit at this stage"
+  }
+}
