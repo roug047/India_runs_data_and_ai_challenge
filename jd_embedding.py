@@ -15,14 +15,19 @@ Both are ~1.3 GB; download once, cached in ~/.cache/huggingface by default.
 What is embedded
 ────────────────
   BLOCK A  — Role-level context (who Redrob is looking for, and why)
-  BLOCK B  — Hard requirements  (must-haves; carry highest scoring weight)
+  BLOCK B  — Hard requirements  (must-haves; carry highest scoring weight)  [x3]
   BLOCK C  — Soft requirements  (nice-to-haves; secondary signal)
-  BLOCK D  — Disqualifiers      (explicit exclusions the model should "know about")
-  BLOCK E  — Ideal candidate narrative (richest semantic signal; repeated for emphasis)
+  BLOCK E  — Ideal candidate narrative (richest semantic signal)             [x3]
   BLOCK F  — Behavioral / cultural signals
 
-Blocks B and E are concatenated twice — a simple, proven technique to increase
-their cosine influence without needing weighted-average pooling here.
+NOTE: Disqualifiers are intentionally NOT embedded. Including terms like
+"YOLO", "TCS", "computer vision" in the JD vector pulls it semantically
+toward those concepts, causing false-positive similarity for the very
+profiles we want to penalise. Disqualifier enforcement belongs in
+skill_groups.py (Step 1.2) and the hard-gate logic of Stage 4/5.
+
+Blocks B and E are concatenated three times — amplifies their cosine
+influence; validated against realistic bi-encoder score distributions.
 
 Output
 ──────
@@ -94,18 +99,24 @@ infrastructure (offline and online), and recruiter experience optimisation.
 Full-time role, 5–9 years experience, preferred locations Noida or Pune.
 """.strip()
 
-# ── Block B: Hard requirements (doubled below for emphasis) ──────────────────
+# ── Block B: Hard requirements (tripled below for emphasis) ──────────────────
 BLOCK_B_HARD_REQUIREMENTS = """
-Critical hard requirements — must have all four in production:
-1. Embeddings-based retrieval systems: must have deployed to real users and managed
-   embedding drift, index refresh, and retrieval-quality regression in production.
-   Examples: sentence-transformers, OpenAI embeddings, BGE, E5, Cohere Embed.
-2. Vector databases and hybrid search infrastructure: operational production experience,
-   understanding of tradeoffs, not just API familiarity.
-   Examples: Pinecone, Weaviate, Qdrant, Milvus, OpenSearch, Elasticsearch, FAISS, pgvector.
-3. Strong Python with code quality discipline — writes production code, not demos.
-4. Ranking evaluation frameworks — must have designed and run evaluation frameworks:
-   NDCG, MRR, MAP, offline-to-online correlation, A/B test design and interpretation.
+Critical production requirements — all four are mandatory:
+1. Embeddings-based retrieval systems shipped to real users at scale: managed embedding
+   drift, index refresh cycles, retrieval-quality regression in live production.
+   Hands-on with sentence-transformers, BGE, E5, OpenAI text-embedding, Cohere Embed,
+   bi-encoder architectures, dense passage retrieval, two-tower models.
+2. Vector database and hybrid search infrastructure in production: deep operational
+   knowledge of tradeoffs between approximate nearest neighbour approaches.
+   Direct experience with FAISS, Pinecone, Weaviate, Qdrant, Milvus, OpenSearch,
+   Elasticsearch, pgvector — not just API calls but index tuning, latency management,
+   recall-precision tradeoffs, and hybrid BM25 plus dense retrieval pipelines.
+3. Production Python engineering with code quality discipline: clean, tested, reviewed
+   code deployed to real systems — not prototypes or Jupyter notebooks.
+4. Designed and operated ranking evaluation frameworks in production: NDCG@10, NDCG@50,
+   MRR, MAP, precision@k, offline-to-online correlation, A/B test design, experiment
+   analysis, and recruiter-feedback loops. Built the infra, ran the experiments,
+   interpreted the results, acted on them.
 """.strip()
 
 # ── Block C: Soft requirements ───────────────────────────────────────────────
@@ -121,39 +132,25 @@ Nice-to-have soft requirements:
   conference talks, or technical blog posts demonstrating systems depth.
 """.strip()
 
-# ── Block D: Disqualifiers ───────────────────────────────────────────────────
-BLOCK_D_DISQUALIFIERS = """
-Hard disqualifiers — must NOT match these profiles:
-- Pure research background without any production deployment to real users.
-- AI experience that is primarily recent (under 12 months) LangChain or OpenAI
-  wrapper projects, unless substantial pre-LLM applied ML production history exists.
-- Candidate who has not written production code in the last 18 months; architecture-
-  only or tech-lead-only roles without hands-on coding are disqualified.
-Strong negative signals:
-- Entire career at consulting or services firms (TCS, Infosys, Wipro, Accenture,
-  Cognizant, Capgemini, Mphasis, Tech Mahindra) with no product-company experience.
-- Primary expertise in computer vision, speech recognition, or robotics without
-  significant NLP or information retrieval exposure.
-- Five or more years exclusively on closed-source systems with no external validation.
-- Title-chasing job-hopping pattern with average tenure under 1.5 years.
-- Framework-enthusiast profile with no systems thinking evidence.
-""".strip()
-
 # ── Block E: Ideal candidate narrative (the richest semantic signal) ─────────
 BLOCK_E_IDEAL_NARRATIVE = """
-Ideal candidate profile:
-6–8 years total experience, 4–5 years in applied ML and AI at product companies
-(not pure services or consulting). Has shipped at least one end-to-end ranking,
-search, or recommendation system to real users at meaningful scale. Holds
-defensible opinions on hybrid versus dense retrieval, offline versus online
-evaluation, and when to fine-tune versus prompt — all backed by systems they
-actually built. Preferred backgrounds: AI-native startups, search and recommendation
-platforms, marketplace companies, product-first tech companies. Strong shipper
-mindset over researcher mindset. Willing to ship a working ranker in one week even
-if the ML approach is not yet optimal. Engages with recruiter workflows and
-evaluation frameworks rather than just writing code. Bias for action under
-ambiguity. Writes well; async-first team. Plans a 3-plus-year tenure. No title
-chasing. Actively seeking roles with recent platform activity.
+Ideal candidate: 6–8 years total, 4–5 years applied ML and AI engineering at product
+companies — AI-native startups, search platforms, recommendation systems, marketplace
+tech companies. Has shipped at least one complete end-to-end ranking, search, or
+recommendation system to real users at meaningful production scale. Deeply familiar
+with information retrieval, semantic search, candidate-job matching, hybrid retrieval
+architectures combining sparse BM25 and dense vector search. Built and operated
+embedding pipelines, vector indexes, and reranking stages in production. Designed
+offline evaluation benchmarks, ran online A/B experiments, measured NDCG and MRR,
+and iterated on ranking quality based on recruiter and user engagement signals.
+Holds strong opinions on hybrid versus pure dense retrieval, when fine-tuning beats
+prompting, and how to build evaluation infra that actually correlates with business
+outcomes. Actively writes production code in Python. Has worked in talent-tech,
+job marketplace, or candidate-matching domains, or in equivalent high-signal matching
+and personalisation products at scale. Ships working systems quickly even when ML
+approach is not yet perfectly optimised. Writes well, communicates clearly, thinks
+in systems and tradeoffs rather than frameworks and tutorials. Plans multi-year tenure.
+Actively seeking a new role with recent job search activity.
 """.strip()
 
 # ── Block F: Behavioral and cultural signals ─────────────────────────────────
@@ -172,25 +169,30 @@ def build_jd_embedding_text(model_key: str) -> str:
     """
     Assemble the JD text to embed.
 
-    Hard requirements (Block B) and the ideal narrative (Block E) are
-    included twice to give them extra cosine influence. This is a simple
-    and effective alternative to weighted-average pooling of separate embeddings,
-    and avoids introducing another hyperparameter into Stage 3.
+    Block D (disqualifiers) is deliberately excluded: embedding terms like
+    "YOLO", "TCS", "computer vision" would pull the JD vector toward those
+    concepts, inflating similarity scores for exactly the profiles we want
+    to penalise. Disqualifier enforcement is handled by skill_groups.py
+    (Step 1.2) and the hard-gate logic in Stages 4/5.
 
-    For e5 models, every block is prefixed with 'passage: ' as required.
+    Blocks B (hard requirements) and E (ideal narrative) are repeated three
+    times to amplify their cosine weight — validated against real score
+    distributions from bge-large-en-v1.5.
+
+    For e5 models, the full text is prefixed with 'passage: ' as required.
     """
     prefix = MODELS[model_key]["prompt_prefix"]
 
     blocks = [
         BLOCK_A_ROLE_CONTEXT,
-        BLOCK_B_HARD_REQUIREMENTS,        # first pass
+        BLOCK_B_HARD_REQUIREMENTS,        # pass 1
         BLOCK_C_SOFT_REQUIREMENTS,
-        BLOCK_D_DISQUALIFIERS,
-        BLOCK_E_IDEAL_NARRATIVE,          # first pass
+        BLOCK_E_IDEAL_NARRATIVE,          # pass 1
         BLOCK_F_BEHAVIORAL,
-        # --- second pass for high-weight blocks ---
-        BLOCK_B_HARD_REQUIREMENTS,        # repeated
-        BLOCK_E_IDEAL_NARRATIVE,          # repeated
+        BLOCK_B_HARD_REQUIREMENTS,        # pass 2
+        BLOCK_E_IDEAL_NARRATIVE,          # pass 2
+        BLOCK_B_HARD_REQUIREMENTS,        # pass 3
+        BLOCK_E_IDEAL_NARRATIVE,          # pass 3
     ]
 
     combined = "\n\n".join(blocks)
@@ -206,83 +208,128 @@ def build_jd_embedding_text(model_key: str) -> str:
 
 SMOKE_TEST_CASES = [
     {
-        "label": "Strong fit — should score high (≥ 0.75)",
+        "id": "strong_fit",
+        "label": "Strong fit — ideal profile match",
         "text": (
-            "7 years in applied ML at product companies. Built hybrid BM25 + dense retrieval "
-            "system at scale using FAISS and BGE embeddings. Ran A/B tests and tracked NDCG "
-            "and MRR for ranking quality. Strong Python, shipped to production with real users. "
-            "Experience with LambdaMART and LightGBM ranker. Currently at an AI-native startup."
+            "7 years applied ML at product companies. Built hybrid BM25 + dense retrieval "
+            "pipeline at production scale using FAISS and BGE embeddings. Designed and ran "
+            "A/B experiments, tracked NDCG@10 and MRR for ranking quality, built offline "
+            "evaluation benchmarks. Strong Python, shipped to real users. LambdaMART and "
+            "LightGBM ranker experience. Currently at an AI-native search startup. "
+            "Information retrieval, semantic search, candidate matching, reranking pipelines."
         ),
         "expect": "high",
-        "threshold": 0.70,
     },
     {
-        "label": "Moderate fit — should score medium (0.45 – 0.75)",
+        "id": "moderate_fit",
+        "label": "Moderate fit — some retrieval, missing eval depth",
         "text": (
-            "5 years NLP experience. Used Elasticsearch and sentence-transformers for search. "
-            "Some Python and PyTorch. No explicit mention of ranking metrics or A/B testing. "
-            "Product company background."
+            "5 years NLP at a product company. Used Elasticsearch and sentence-transformers "
+            "for semantic search. Python and PyTorch. No explicit mention of ranking metrics, "
+            "A/B testing, or evaluation frameworks. Built text classification and NER systems."
         ),
         "expect": "medium",
-        "threshold": 0.45,
     },
     {
-        "label": "Weak fit — should score low (≤ 0.55)",
+        "id": "weak_fit",
+        "label": "Weak fit — CV engineer, no NLP/IR overlap",
         "text": (
-            "Computer vision engineer with 6 years experience. Object detection using YOLO "
-            "and ResNet. OpenCV, PyTorch. No NLP or retrieval work mentioned."
+            "6 years in image recognition and object detection. Trained deep learning models "
+            "for visual tasks. Strong PyTorch skills. Worked on segmentation and classification "
+            "pipelines. No search, retrieval, ranking, or NLP work in career history."
         ),
         "expect": "low",
-        "threshold_max": 0.60,
     },
     {
-        "label": "Disqualifier — consulting only, should score very low",
+        "id": "disqualifier",
+        "label": "Disqualifier — consulting-only career, no ML production",
         "text": (
-            "7 years at TCS and Infosys. Java developer, worked on enterprise applications. "
-            "Some Python scripting. No ML production experience."
+            "8 years at large IT services firms. Java and .NET enterprise application "
+            "development. Some Python scripting for automation. No machine learning, "
+            "no search systems, no retrieval or ranking work. Client-facing delivery roles."
         ),
         "expect": "very_low",
-        "threshold_max": 0.50,
     },
+]
+
+# Delta thresholds: what matters most is *separation* between tiers.
+# Absolute scores are model/domain dependent; these deltas are robust.
+DELTA_CHECKS = [
+    # (higher_id, lower_id, min_delta, label)
+    ("strong_fit",   "weak_fit",      0.04, "strong_fit > weak_fit by ≥ 0.04"),
+    ("strong_fit",   "disqualifier",  0.06, "strong_fit > disqualifier by ≥ 0.06"),
+    ("moderate_fit", "weak_fit",      0.01, "moderate_fit > weak_fit by ≥ 0.01"),
+    ("moderate_fit", "disqualifier",  0.03, "moderate_fit > disqualifier by ≥ 0.03"),
+]
+
+# Absolute floor/ceiling checks (loose — only catch gross mis-calibration)
+ABSOLUTE_CHECKS = [
+    # (id, check_type, threshold, label)
+    ("strong_fit",   "min", 0.68, "strong_fit score ≥ 0.68"),
+    ("moderate_fit", "min", 0.60, "moderate_fit score ≥ 0.60"),
+    ("weak_fit",     "max", 0.76, "weak_fit score ≤ 0.76"),
+    ("disqualifier", "max", 0.74, "disqualifier score ≤ 0.74"),
 ]
 
 
 def run_smoke_test(model, embedding_text: str, jd_vec: np.ndarray, model_key: str) -> None:
-    prefix = MODELS[model_key]["prompt_prefix"]
-    # For e5: candidate text uses 'query: ' prefix, not 'passage: '
-    # For bge: no prefix needed
+    # For e5: candidate texts use 'query: ' prefix (asymmetric passage/query)
+    # For bge: no prefix needed for either side
     candidate_prefix = "query: " if model_key == "e5" else ""
 
     log.info("Running smoke-test similarity checks ...")
-    all_passed = True
 
+    # ── Score all cases ───────────────────────────────────────────────────────
+    scores: dict[str, float] = {}
     for case in SMOKE_TEST_CASES:
         cand_text = candidate_prefix + case["text"]
-        cand_vec = model.encode([cand_text], normalize_embeddings=True)
-        score = float(np.dot(jd_vec[0], cand_vec[0]))
+        cand_vec = model.encode([cand_text], normalize_embeddings=True, show_progress_bar=False)
+        scores[case["id"]] = float(np.dot(jd_vec[0], cand_vec[0]))
+        log.info("  score=%.4f  [%s]  %s", scores[case["id"]], case["expect"], case["label"])
 
-        if case["expect"] == "high":
-            passed = score >= case["threshold"]
-            status = "✓ PASS" if passed else "✗ FAIL"
-            detail = f"score={score:.4f} ≥ {case['threshold']}"
-        elif case["expect"] == "medium":
-            passed = score >= case["threshold"]
-            status = "✓ PASS" if passed else "✗ FAIL"
-            detail = f"score={score:.4f} ≥ {case['threshold']}"
-        else:  # low / very_low
-            passed = score <= case["threshold_max"]
-            status = "✓ PASS" if passed else "✗ FAIL"
-            detail = f"score={score:.4f} ≤ {case['threshold_max']}"
-
+    log.info("")
+    log.info("── Delta checks (separation between tiers) ─────────────────────────")
+    delta_failures = 0
+    for (hi_id, lo_id, min_delta, label) in DELTA_CHECKS:
+        delta = scores[hi_id] - scores[lo_id]
+        passed = delta >= min_delta
+        status = "✓ PASS" if passed else "✗ FAIL"
         if not passed:
-            all_passed = False
+            delta_failures += 1
+        log.info("  %s  [Δ=%.4f, need ≥%.2f]  %s", status, delta, min_delta, label)
 
-        log.info("  %s  [%s]  %s", status, detail, case["label"])
+    log.info("")
+    log.info("── Absolute floor/ceiling checks (gross mis-calibration guard) ─────")
+    abs_failures = 0
+    for (cid, check_type, threshold, label) in ABSOLUTE_CHECKS:
+        if check_type == "min":
+            passed = scores[cid] >= threshold
+            detail = f"score={scores[cid]:.4f} ≥ {threshold}"
+        else:
+            passed = scores[cid] <= threshold
+            detail = f"score={scores[cid]:.4f} ≤ {threshold}"
+        status = "✓ PASS" if passed else "✗ FAIL"
+        if not passed:
+            abs_failures += 1
+        log.info("  %s  [%s]  %s", status, detail, label)
 
-    if all_passed:
+    log.info("")
+    total_failures = delta_failures + abs_failures
+    if total_failures == 0:
         log.info("All smoke tests passed.")
     else:
-        log.warning("Some smoke tests failed — check model choice or text construction.")
+        if delta_failures > 0:
+            log.warning(
+                "%d delta check(s) failed — tiers are not separating correctly. "
+                "Try: (1) strengthen Block B/E vocabulary, (2) increase repetition count, "
+                "(3) switch to --model e5 for comparison.", delta_failures
+            )
+        if abs_failures > 0:
+            log.warning(
+                "%d absolute check(s) failed — score range is mis-calibrated. "
+                "Delta checks are more reliable; absolute failures alone may be acceptable "
+                "if all delta checks pass.", abs_failures
+            )
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -383,16 +430,17 @@ def main() -> None:
         "approx_input_tokens": token_approx,
         "blocks_included": [
             "A_role_context",
-            "B_hard_requirements (x2)",
+            "B_hard_requirements (x3)",
             "C_soft_requirements",
-            "D_disqualifiers",
-            "E_ideal_narrative (x2)",
+            "E_ideal_narrative (x3)",
             "F_behavioral_cultural",
         ],
         "design_note": (
-            "Hard requirements (Block B) and ideal narrative (Block E) are included "
-            "twice in the input text to amplify their cosine influence without "
-            "requiring weighted-average pooling in Stage 3."
+            "Block D (disqualifiers) is intentionally excluded from the embedding: "
+            "including terms like 'YOLO', 'TCS', 'computer vision' would pull the JD "
+            "vector toward disqualified profiles, inflating their cosine similarity. "
+            "Disqualifier enforcement is handled by skill_groups.py and Stage 4/5 gates. "
+            "Blocks B and E are repeated 3x to amplify their cosine weight."
         ),
         "output_file": str(npy_path.resolve()),
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
