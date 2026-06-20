@@ -1,0 +1,74 @@
+{
+  "min_yoe": 5,
+  "max_yoe": 9,
+  "yoe_soft": true,
+  "yoe_ideal_low": 6,
+  "yoe_ideal_high": 8,
+  "preferred_locs": [
+    "pune",
+    "noida",
+    "hyderabad",
+    "mumbai",
+    "delhi",
+    "ncr",
+    "delhi ncr",
+    "gurgaon",
+    "gurugram"
+  ],
+  "acceptable_countries": [
+    "india"
+  ],
+  "outside_india_visa_sponsorship": false,
+  "notice_ideal_days": 30,
+  "notice_soft_max_days": 30,
+  "notice_in_scope_max_days": 180,
+  "production_required": true,
+  "hard_requirements": {
+    "embeddings_retrieval": 1.0,
+    "vector_search_infra": 1.0,
+    "ranking_evaluation": 0.95,
+    "python_production": 0.85
+  },
+  "soft_requirements": {
+    "llm_finetuning": 0.65,
+    "learning_to_rank": 0.7,
+    "hr_tech_experience": 0.55,
+    "distributed_systems": 0.5,
+    "open_source": 0.55,
+    "hybrid_retrieval": 0.8
+  },
+  "disqualifiers": [
+    "pure_research_no_prod",
+    "langchain_only_under_12mo",
+    "no_code_18mo",
+    "pure_consulting_career",
+    "cv_speech_robotics_only",
+    "closed_source_no_validation",
+    "title_chaser"
+  ],
+  "behavioral_signals_matter": true,
+  "consulting_firms": [
+    "tcs",
+    "tata consultancy",
+    "infosys",
+    "wipro",
+    "accenture",
+    "cognizant",
+    "capgemini",
+    "mphasis",
+    "tech mahindra",
+    "hexaware",
+    "ltimindtree",
+    "mindtree",
+    "hcl",
+    "l&t infotech",
+    "persistent",
+    "igate",
+    "syntel",
+    "birlasoft"
+  ],
+  "ideal_profile_summary": "Senior AI engineer with about 6 to 8 years total experience, of which 4 to 5 are in applied ML/AI roles at product companies rather than pure services. Has shipped at least one end-to-end ranking, search, or recommendation system to real users at meaningful scale. Has production experience with embeddings-based retrieval and with vector search or hybrid search infrastructure, and has designed evaluation frameworks for ranking systems using NDCG, MRR, and MAP with offline-to-online correlation. Holds strong, defensible opinions about retrieval (hybrid vs dense), evaluation (offline vs online), and LLM integration (when to fine-tune vs prompt), grounded in systems they actually built. Writes strong production Python and tilts toward shipper over researcher. Located in or willing to relocate to Noida or Pune, and active in the job market.",
+  "anti_pattern_summary": "Not a fit: candidates whose skills section lists many AI keywords but whose career history and title do not show building production retrieval/ranking/recsys systems; e.g. a Marketing Manager with a perfect AI skill list. Keyword presence is a trap.",
+  "_source": "hand-authored from job_description.docx (deterministic fallback)",
+  "_jd_role": "Senior AI Engineer \u2014 Founding Team, Redrob AI"
+}
