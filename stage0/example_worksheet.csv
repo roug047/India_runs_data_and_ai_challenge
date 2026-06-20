@@ -1,0 +1,51 @@
+label,bucket,candidate_id,name,title,company,size,yoe,location,country,notice_days,relocate,open_to_work,hard_kw_hits,ai_skill_count,eng_title,github,note,headline
+,backfill,CAND_0000003,Yash Agarwal,Customer Support,TCS,10001+,1.1,Austin,USA,150,False,False,0,0,0,-1,,Customer Support | 1.1+ yrs experience
+,backfill,CAND_0000025,Anika Kumar,Frontend Engineer,Tech Mahindra,10001+,7.3,"Vizag, Andhra Pradesh",India,120,False,True,0,1,1,-1,,Frontend Engineer | Cloud & DevOps
+,backfill,CAND_0000012,Anjali Krishnan,Operations Manager,Stark Industries,1001-5000,1.1,"Chandigarh, Chandigarh",India,60,False,False,0,0,0,-1,,Operations Manager | Driving business outcomes
+,backfill,CAND_0000029,Priya Sethi,Business Analyst,Wipro,10001+,7.2,"Noida, Uttar Pradesh",India,60,False,False,0,0,0,42.5,,Business Analyst | Driving business outcomes
+,backfill,CAND_0000030,Ritu Pillai,Marketing Manager,Dunder Mifflin,201-500,10.0,"Kochi, Kerala",India,60,False,False,0,0,0,21.7,,Marketing Manager | Driving business outcomes
+,backfill,CAND_0000001,Ira Vora,Backend Engineer,Mindtree,10001+,6.9,Toronto,Canada,60,False,True,0,4,1,9.2,,"Backend Engineer | SQL, Spark, Cloud"
+,backfill,CAND_0000045,Vikram Mittal,Project Manager,Initech,51-200,12.2,"Indore, Madhya Pradesh",India,60,True,True,0,0,0,-1,,Project Manager | 12.2+ yrs experience
+,backfill,CAND_0000035,Vikram Verma,Full Stack Developer,Globex Inc,501-1000,4.3,"Hyderabad, Telangana",India,60,False,False,0,1,1,-1,,Full Stack Developer | Backend systems & APIs
+,backfill,CAND_0000007,Vihaan Bose,Civil Engineer,Wipro,10001+,5.5,"Gurgaon, Haryana",India,30,True,False,0,0,1,-1,,Civil Engineer | 5.5+ yrs experience
+,backfill,CAND_0000017,Anil Pandey,Accountant,Wipro,10001+,12.3,"Bangalore, Karnataka",India,90,False,False,0,0,0,-1,,Accountant | 12.3+ yrs experience
+,backfill,CAND_0000005,Aisha Sethi,Accountant,Stark Industries,1001-5000,11.0,"Gurgaon, Haryana",India,30,True,True,0,0,0,-1,,Accountant | Helping teams scale
+,backfill,CAND_0000039,Sai Saxena,Marketing Manager,Acme Corp,201-500,3.9,"Bhubaneswar, Odisha",India,30,True,False,0,0,0,-1,,Marketing Manager | Helping teams scale
+,backfill,CAND_0000038,Myra Trivedi,Java Developer,Swiggy,5001-10000,6.7,"Coimbatore, Tamil Nadu",India,90,True,True,0,1,1,37.8,,Java Developer | Cloud & DevOps
+,backfill,CAND_0000009,Amit Shah,Mechanical Engineer,Dunder Mifflin,201-500,11.0,New York,USA,150,False,False,0,0,1,-1,,Mechanical Engineer | Driving business outcomes
+,backfill,CAND_0000037,Ved Sen,Business Analyst,Stark Industries,1001-5000,14.3,Dubai,UAE,30,False,False,0,0,0,-1,,Business Analyst | 14.3+ yrs experience
+,backfill,CAND_0000049,Tanya Chowdary,Mechanical Engineer,Wayne Enterprises,10001+,11.8,Berlin,Germany,120,False,False,0,0,1,-1,,Mechanical Engineer | Helping teams scale
+,backfill,CAND_0000034,Yash Chatterjee,Business Analyst,Wipro,10001+,14.5,"Ahmedabad, Gujarat",India,90,False,False,0,0,0,-1,,Business Analyst | Driving business outcomes
+,backfill,CAND_0000002,Saanvi Sethi,Operations Manager,Wipro,10001+,12.5,"Chennai, Tamil Nadu",India,60,False,True,0,0,0,-1,,Operations Manager | 12.5+ yrs experience
+,backfill,CAND_0000013,Pari Nair,Civil Engineer,Globex Inc,501-1000,1.1,Dubai,UAE,30,False,True,0,0,1,35.6,,Civil Engineer | Driving business outcomes
+,backfill,CAND_0000044,Vihaan Naidu,Frontend Engineer,Tech Mahindra,10001+,5.7,"Indore, Madhya Pradesh",India,90,False,False,0,0,1,6.5,,Frontend Engineer | Backend systems & APIs
+,backfill,CAND_0000048,Vihaan Saxena,Mobile Developer,CRED,1001-5000,9.7,"Hyderabad, Telangana",India,120,False,True,0,0,1,-1,,Mobile Developer | Full-stack development
+,backfill,CAND_0000028,Rohan Krishnan,Operations Manager,Wipro,10001+,1.1,Dubai,UAE,60,True,False,0,0,0,-1,,Operations Manager | Driving business outcomes
+,backfill,CAND_0000004,Anil Bose,Marketing Manager,Dunder Mifflin,201-500,3.8,Sydney,Australia,120,True,False,0,0,0,-1,,Marketing Manager | Driving business outcomes
+,disqualifier,CAND_0000027,Avni Pandey,DevOps Engineer,Infosys,10001+,3.9,"Kolkata, West Bengal",India,90,False,True,0,1,1,38.6,,DevOps Engineer | Cloud & DevOps
+,disqualifier,CAND_0000016,Aanya Malhotra,Accountant,Infosys,10001+,5.3,"Gurgaon, Haryana",India,60,False,True,0,0,0,42.9,,Accountant | Helping teams scale
+,disqualifier,CAND_0000008,Shaurya Chatterjee,Operations Manager,Wipro,10001+,3.6,"Noida, Uttar Pradesh",India,90,False,False,0,0,0,-1,,Operations Manager | 3.6+ yrs experience
+,disqualifier,CAND_0000023,Kavya Nair,Software Engineer,Acme Corp,201-500,3.7,New York,USA,30,False,False,0,0,1,48.5,,Software Engineer | Cloud & DevOps
+,disqualifier,CAND_0000022,Shaurya Chatterjee,Mechanical Engineer,Hooli,1001-5000,1.1,Sydney,Australia,150,False,True,0,0,1,-1,,Mechanical Engineer | Driving business outcomes
+,disqualifier,CAND_0000041,Anjali Khanna,Operations Manager,Hooli,1001-5000,13.7,"Delhi, Delhi",India,90,True,True,0,0,0,-1,,Operations Manager | Helping teams scale
+,disqualifier,CAND_0000050,Naina Bose,Business Analyst,Infosys,10001+,13.5,"Gurgaon, Haryana",India,90,False,False,0,0,0,44.7,,Business Analyst | Helping teams scale
+,disqualifier,CAND_0000024,Rajesh Arora,HR Manager,TCS,10001+,7.5,"Trivandrum, Kerala",India,60,True,False,0,0,0,46.3,,HR Manager | 7.5+ yrs experience
+,disqualifier,CAND_0000010,Aarav Kapoor,Data Engineer,Ola,5001-10000,4.6,London,UK,120,False,False,0,0,1,33.7,,Data Engineer | Data pipelines & analytics
+,disqualifier,CAND_0000036,Ananya Bose,Project Manager,Initech,51-200,11.3,"Trivandrum, Kerala",India,60,False,True,0,0,0,-1,,Project Manager | 11.3+ yrs experience
+,disqualifier,CAND_0000047,Avni Bansal,Project Manager,TCS,10001+,2.4,"Kochi, Kerala",India,90,False,False,0,0,0,-1,,Project Manager | Helping teams scale
+,disqualifier,CAND_0000040,Dev Vora,Customer Support,Globex Inc,501-1000,1.6,"Kochi, Kerala",India,90,False,False,0,0,0,-1,,Customer Support | Helping teams scale
+,honeypot,CAND_0000011,Deepak Desai,QA Engineer,Pied Piper,11-50,2.0,"Hyderabad, Telangana",India,90,False,False,0,2,1,32.3,,QA Engineer | Cloud & DevOps
+,midband,CAND_0000032,Pranav Agarwal,.NET Developer,Cognizant,10001+,8.1,"Gurgaon, Haryana",India,150,True,False,0,1,1,-1,,.NET Developer | Full-stack development
+,midband,CAND_0000043,Aarav Sen,Cloud Engineer,Swiggy,5001-10000,8.3,"Chandigarh, Chandigarh",India,120,True,False,0,3,1,-1,,Cloud Engineer | Full-stack development
+,midband,CAND_0000026,Neha Rao,Graphic Designer,Initech,51-200,6.8,"Kochi, Kerala",India,30,False,False,0,0,0,-1,,Graphic Designer | 6.8+ yrs experience
+,midband,CAND_0000020,Aditya Iyengar,Mechanical Engineer,Wipro,10001+,6.3,"Ahmedabad, Gujarat",India,30,False,False,0,0,1,-1,,Mechanical Engineer | 6.3+ yrs experience
+,midband,CAND_0000046,Dev Nair,Mechanical Engineer,Hooli,1001-5000,7.8,London,UK,30,True,False,0,0,1,20.9,,Mechanical Engineer | 7.8+ yrs experience
+,midband,CAND_0000042,Riya Mukherjee,HR Manager,Wayne Enterprises,10001+,5.0,Berlin,Germany,30,True,False,0,0,0,-1,,HR Manager | 5.0+ yrs experience
+,midband,CAND_0000019,Myra Mishra,Project Manager,Wayne Enterprises,10001+,6.5,"Trivandrum, Kerala",India,60,False,False,0,0,0,-1,,Project Manager | 6.5+ yrs experience
+,midband,CAND_0000014,Atharv Joshi,Frontend Engineer,Zomato,5001-10000,8.4,"Hyderabad, Telangana",India,90,False,False,0,1,1,-1,,Frontend Engineer | Full-stack development
+,midband,CAND_0000033,Shreya Nair,Graphic Designer,Wipro,10001+,8.6,"Pune, Maharashtra",India,30,False,True,0,0,0,38.3,,Graphic Designer | Helping teams scale
+,midband,CAND_0000015,Rahul Agarwal,Software Engineer,Razorpay,1001-5000,5.4,"Trivandrum, Kerala",India,90,False,True,0,1,1,-1,,Software Engineer | Cloud & DevOps
+,midband,CAND_0000018,Vivaan Reddy,Frontend Engineer,Acme Corp,201-500,6.6,"Bhubaneswar, Odisha",India,120,False,False,0,0,1,-1,,Frontend Engineer | Full-stack development
+,midband,CAND_0000006,Rajesh Desai,Business Analyst,Wayne Enterprises,10001+,6.0,Austin,USA,150,True,False,0,0,0,-1,,Business Analyst | 6.0+ yrs experience
+,strong,CAND_0000031,Ela Singh,Recommendation Systems Engineer,Swiggy,5001-10000,6.0,"Hyderabad, Telangana",India,60,True,True,4,4,1,32.6,,"Recommendation Systems Engineer | Search, Ranking & Retrieval"
+,trap,CAND_0000021,Rahul Joshi,Project Manager,Wipro,10001+,14.5,"Bhubaneswar, Odisha",India,60,True,False,1,7,0,6.4,,Project Manager | AI enthusiast | Building with LLMs

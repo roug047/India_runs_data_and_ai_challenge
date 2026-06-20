@@ -1,0 +1,30 @@
+# --- Big input data (organizer-provided; do not commit) ---
+candidates.jsonl
+candidates.jsonl.gz
+*.npy
+
+# --- Derived/large artifacts (regenerable) ---
+artifacts/candidate_embeddings*.npy
+artifacts/features_100k.parquet
+artifacts/bm25_scores.npy
+artifacts/*.txt          # trained LightGBM boosters
+models/*.gguf            # local LLM weights
+
+# --- KEEP these small human/critical artifacts (force-add) ---
+!artifacts/golden_set.json
+!artifacts/golden_set_worksheet.csv
+!artifacts/anchor_candidates.json
+!artifacts/reference_date.json
+!artifacts/stage0_data_report.json
+!artifacts/naive_baseline_top100.json
+!artifacts/audit_log.json
+
+# --- Python noise ---
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.DS_Store
+
+# --- Office temp files ---
+~$*.docx

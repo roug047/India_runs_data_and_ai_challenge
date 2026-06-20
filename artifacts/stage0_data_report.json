@@ -1,0 +1,88 @@
+{
+  "n": 100000,
+  "unique_ids": 100000,
+  "reference_date": "2026-05-27",
+  "yoe": {
+    "min": 1.0,
+    "p25": 3.9,
+    "median": 6.8,
+    "p75": 9.9,
+    "max": 16.9,
+    "in_5_9_band_pct": 34.4
+  },
+  "countries_top": [
+    [
+      "India",
+      75113
+    ],
+    [
+      "USA",
+      9978
+    ],
+    [
+      "Australia",
+      2579
+    ],
+    [
+      "Canada",
+      2506
+    ],
+    [
+      "UK",
+      2472
+    ],
+    [
+      "Germany",
+      2469
+    ],
+    [
+      "Singapore",
+      2453
+    ],
+    [
+      "UAE",
+      2430
+    ]
+  ],
+  "india_pct": 75.1,
+  "company_size_top": [
+    [
+      "10001+",
+      40464
+    ],
+    [
+      "1001-5000",
+      18201
+    ],
+    [
+      "201-500",
+      15096
+    ],
+    [
+      "51-200",
+      7727
+    ],
+    [
+      "11-50",
+      7568
+    ],
+    [
+      "501-1000",
+      7525
+    ],
+    [
+      "5001-10000",
+      3419
+    ]
+  ],
+  "open_to_work_pct": 35.3,
+  "willing_to_relocate_pct": 28.8,
+  "github_linked_pct": 35.4,
+  "has_offer_history_pct": 40.4,
+  "skills_with_duration_pct": 100.0,
+  "notice_days": {
+    "p25": 60,
+    "median": 90,
+    "p75": 120
+  }
+}

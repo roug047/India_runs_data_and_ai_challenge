@@ -1,0 +1,7 @@
+{
+  "reference_date": "2026-05-27",
+  "method": "max(last_active_date) across pool",
+  "source": "full_pool",
+  "max_last_active": "2026-05-27",
+  "max_career_end_date": "2025-06-01"
+}

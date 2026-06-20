@@ -1,0 +1,61 @@
+label,bucket,candidate_id,name,title,company,size,yoe,location,country,notice_days,relocate,open_to_work,hard_kw_hits,ai_skill_count,eng_title,github,note,headline
+0,disqualifier,CAND_0017662,Saanvi Shah,Content Writer,Hooli,1001-5000,2.3,"Ahmedabad, Gujarat",India,90,FALSE,TRUE,0,0,0,-1,,Content Writer | Driving business outcomes
+0,disqualifier,CAND_0056471,Ananya Pillai,Accountant,Infosys,10001+,6,"Gurgaon, Haryana",India,90,TRUE,FALSE,0,0,0,-1,,Accountant | Driving business outcomes
+0,disqualifier,CAND_0005129,Sai Shetty,Operations Manager,Initech,51-200,2,"Pune, Maharashtra",India,120,FALSE,FALSE,0,0,0,-1,,Operations Manager | 2.0+ yrs experience
+0,disqualifier,CAND_0044959,Zara Joshi,Marketing Manager,Initech,51-200,14.6,"Kolkata, West Bengal",India,150,TRUE,FALSE,0,0,0,16.2,,Marketing Manager | Driving business outcomes
+0,disqualifier,CAND_0005524,Aarav Banerjee,Business Analyst,Wipro,10001+,3.4,New York,USA,30,FALSE,FALSE,0,0,0,-1,,Business Analyst | 3.4+ yrs experience
+0,disqualifier,CAND_0071481,Ela Chatterjee,Business Analyst,Acme Corp,201-500,14.7,Sydney,Australia,90,TRUE,TRUE,0,0,0,-1,,Business Analyst | Driving business outcomes
+0,disqualifier,CAND_0030147,Kiara Dutta,Business Analyst,Wayne Enterprises,10001+,12.1,"Bhubaneswar, Odisha",India,60,TRUE,FALSE,0,0,0,-1,,Business Analyst | Helping teams scale
+0,disqualifier,CAND_0077865,Deepak Trivedi,Business Analyst,Dunder Mifflin,201-500,1.1,Dubai,UAE,150,FALSE,TRUE,0,0,0,-1,,Business Analyst | Driving business outcomes
+1,disqualifier,CAND_0043511,Nisha Agarwal,Mobile Developer,Accenture,10001+,5.3,"Indore, Madhya Pradesh",India,90,FALSE,FALSE,0,1,1,56.8,,Mobile Developer | Backend systems & APIs
+0,disqualifier,CAND_0080412,Dhruv Shah,HR Manager,Wipro,10001+,8.4,"Kochi, Kerala",India,90,FALSE,TRUE,0,0,0,-1,,HR Manager | Helping teams scale
+1,disqualifier,CAND_0091742,Manish Dalal,QA Engineer,Acme Corp,201-500,1.1,"Jaipur, Rajasthan",India,90,FALSE,TRUE,0,0,1,16.1,,QA Engineer | Backend systems & APIs
+0,disqualifier,CAND_0068576,Shreya Chopra,Project Manager,Dunder Mifflin,201-500,13.2,"Vizag, Andhra Pradesh",India,150,FALSE,FALSE,0,0,0,18.5,,Project Manager | Driving business outcomes
+0,honeypot,CAND_0068043,Yash Krishnan,Sales Executive,Acme Corp,201-500,1.6,"Bangalore, Karnataka",India,90,FALSE,FALSE,0,0,0,-1,,Sales Executive | Driving business outcomes
+0,honeypot,CAND_0089609,Aanya Iyengar,Full Stack Developer,Stark Industries,1001-5000,1.4,"Bangalore, Karnataka",India,90,FALSE,FALSE,0,0,1,2.8,,Full Stack Developer | Cloud & DevOps
+0,honeypot,CAND_0094973,Nikhil Arora,Software Engineer,Wipro,10001+,1.4,Berlin,Germany,120,FALSE,TRUE,0,1,1,35.8,,Software Engineer | Full-stack development
+0,honeypot,CAND_0086481,Mira Bhatia,Project Manager,Stark Industries,1001-5000,1.4,"Bangalore, Karnataka",India,30,FALSE,FALSE,0,0,0,-1,,Project Manager | Driving business outcomes
+0,honeypot,CAND_0042252,Kavya Bhatia,Analytics Engineer,Cognizant,10001+,2.6,"Chennai, Tamil Nadu",India,90,FALSE,FALSE,0,2,1,-1,,"Analytics Engineer | SQL, Spark, Cloud"
+0,honeypot,CAND_0019916,Dhruv Iyer,Civil Engineer,Wipro,10001+,1.5,"Coimbatore, Tamil Nadu",India,120,FALSE,FALSE,0,0,1,-1,,Civil Engineer | 1.5+ yrs experience
+1,honeypot,CAND_0030371,Tanya Chatterjee,Senior Software Engineer,Ola,5001-10000,2.6,"Trivandrum, Kerala",India,90,FALSE,FALSE,0,1,1,-1,,Senior Software Engineer | Data pipelines & analytics
+1,honeypot,CAND_0090468,Ved Patel,Mobile Developer,Flipkart,10001+,2.2,"Chennai, Tamil Nadu",India,120,TRUE,FALSE,0,1,1,31.3,,Mobile Developer | Backend systems & APIs
+0,honeypot,CAND_0030605,Ved Sen,Java Developer,Wipro,10001+,2.4,"Indore, Madhya Pradesh",India,90,TRUE,FALSE,0,0,1,-1,,Java Developer | Full-stack development
+0,honeypot,CAND_0021445,Vihaan Dutta,QA Engineer,Infosys,10001+,1.5,"Kolkata, West Bengal",India,120,FALSE,TRUE,0,1,1,6,,QA Engineer | Cloud & DevOps
+0,honeypot,CAND_0022450,Tanya Sharma,Java Developer,Initech,51-200,1.6,"Mumbai, Maharashtra",India,120,FALSE,FALSE,0,0,1,49.3,,Java Developer | Full-stack development
+0,honeypot,CAND_0022896,Aisha Shetty,QA Engineer,Swiggy,5001-10000,1.8,"Kochi, Kerala",India,90,TRUE,FALSE,0,0,1,9.6,,QA Engineer | Cloud & DevOps
+2,midband,CAND_0093121,Sunil Shah,Senior Data Engineer,upGrad,1001-5000,6,Dubai,UAE,60,TRUE,FALSE,0,4,1,-1,,Senior Data Engineer | Data pipelines & analytics
+1,midband,CAND_0061145,Aanya Bansal,Frontend Engineer,Razorpay,1001-5000,7.1,"Bhubaneswar, Odisha",India,120,FALSE,TRUE,0,0,1,-1,,Frontend Engineer | Full-stack development
+2,midband,CAND_0030227,Aanya Trivedi,Analytics Engineer,BYJU'S,10001+,7.2,"Chennai, Tamil Nadu",India,30,FALSE,FALSE,0,1,1,15.7,,"Analytics Engineer | SQL, Spark, Cloud"
+0,midband,CAND_0010144,Aarav Tiwari,Civil Engineer,Wayne Enterprises,10001+,5.1,"Jaipur, Rajasthan",India,60,TRUE,FALSE,0,0,1,44.9,,Civil Engineer | 5.1+ yrs experience
+1,midband,CAND_0033082,Meera Goyal,QA Engineer,Acme Corp,201-500,7.4,"Kochi, Kerala",India,120,FALSE,FALSE,0,0,1,-1,,QA Engineer | Backend systems & APIs
+0,midband,CAND_0058711,Sanjay Trivedi,Project Manager,Infosys,10001+,5.7,"Hyderabad, Telangana",India,30,FALSE,FALSE,0,0,0,-1,,Project Manager | 5.7+ yrs experience
+1,midband,CAND_0056364,Arjun Malhotra,Frontend Engineer,Globex Inc,501-1000,6.3,"Ahmedabad, Gujarat",India,120,FALSE,TRUE,0,0,1,37.1,,Frontend Engineer | Cloud & DevOps
+0,midband,CAND_0004552,Divya Pandey,Accountant,TCS,10001+,6.3,"Hyderabad, Telangana",India,60,TRUE,FALSE,0,0,0,-1,,Accountant | 6.3+ yrs experience
+0,midband,CAND_0019639,Ira Trivedi,Sales Executive,Acme Corp,201-500,8.3,Berlin,Germany,90,TRUE,TRUE,0,0,0,-1,,Sales Executive | 8.3+ yrs experience
+0,midband,CAND_0034734,Krishna Saxena,Project Manager,Wayne Enterprises,10001+,5.3,"Noida, Uttar Pradesh",India,90,FALSE,FALSE,0,0,0,-1,,Project Manager | Helping teams scale
+3,midband,CAND_0001131,Aarav Goyal,ML Engineer,Wysa,51-200,5.8,"Chennai, Tamil Nadu",India,90,TRUE,TRUE,2,3,1,51.2,,ML Engineer | Building ML-powered solutions
+1,midband,CAND_0006940,Rohan Vora,Frontend Engineer,Zomato,5001-10000,5.4,"Chandigarh, Chandigarh",India,90,FALSE,TRUE,0,0,1,-1,,Frontend Engineer | Cloud & DevOps
+3,strong,CAND_0074123,Karan Sen,Data Scientist,CRED,1001-5000,6.9,"Bhubaneswar, Odisha",India,30,TRUE,TRUE,3,3,1,-1,,Data Scientist | Building ML-powered solutions
+3,strong,CAND_0040178,Anika Bhatia,ML Engineer,Meesho,1001-5000,5,"Pune, Maharashtra",India,60,FALSE,TRUE,3,3,1,19.7,,ML Engineer | Data Science & ML enthusiast
+3,strong,CAND_0083307,Neha Patel,Search Engineer,CRED,1001-5000,7.8,"Vizag, Andhra Pradesh",India,120,FALSE,TRUE,10,7,1,69.2,,"Search Engineer | Search, Ranking & Retrieval"
+3,strong,CAND_0054703,Sai Shetty,Computer Vision Engineer,Razorpay,1001-5000,6.8,"Vizag, Andhra Pradesh",India,60,TRUE,TRUE,3,4,1,-1,,Computer Vision Engineer | Data Science & ML enthusiast
+3,strong,CAND_0039383,Riya Malhotra,Applied ML Engineer,Meesho,1001-5000,7.1,"Gurgaon, Haryana",India,90,TRUE,TRUE,8,7,1,86.4,,Applied ML Engineer | Applied ML | Building intelligent products
+3,strong,CAND_0092278,Ananya Arora,Senior NLP Engineer,Microsoft,10001+,6.8,"Pune, Maharashtra",India,90,FALSE,FALSE,9,7,1,-1,,Senior NLP Engineer | Building AI-native search & ranking systems
+2,strong,CAND_0035764,Amit Chowdary,Senior Software Engineer (ML),Zomato,5001-10000,6.8,"Kochi, Kerala",India,90,FALSE,TRUE,3,5,1,-1,,Senior Software Engineer (ML) | Data Science & ML enthusiast
+2,strong,CAND_0056262,Ayaan Tiwari,Junior ML Engineer,Swiggy,5001-10000,6,"Bangalore, Karnataka",India,90,TRUE,FALSE,3,4,1,17.4,,Junior ML Engineer | Data Science & ML enthusiast
+3,strong,CAND_0052328,Vikram Banerjee,Recommendation Systems Engineer,Amazon,10001+,6.5,"Pune, Maharashtra",India,30,FALSE,TRUE,5,6,1,77.6,,"Recommendation Systems Engineer | Search, Ranking & Retrieval"
+3,strong,CAND_0014440,Ananya Singh,Recommendation Systems Engineer,CRED,1001-5000,6.4,"Chennai, Tamil Nadu",India,60,FALSE,TRUE,4,4,1,89.5,,"Recommendation Systems Engineer | Search, Ranking & Retrieval"
+3,strong,CAND_0018499,Aarav Trivedi,Senior Machine Learning Engineer,Zomato,5001-10000,7.2,"Noida, Uttar Pradesh",India,15,TRUE,TRUE,9,9,1,94.8,,Senior Machine Learning Engineer | Building AI-native search & ranking systems
+3,strong,CAND_0042029,Dhruv Joshi,Senior Data Scientist,Flipkart,10001+,6.5,"Delhi, Delhi",India,45,TRUE,FALSE,8,5,1,78.7,,"Senior Data Scientist | Search, Ranking & Retrieval"
+0,trap,CAND_0045243,Kabir Malhotra,Business Analyst,Acme Corp,201-500,13.1,San Francisco,USA,120,FALSE,FALSE,1,8,0,47.1,,Business Analyst | Generative AI explorer
+0,trap,CAND_0015029,Pari Tiwari,Marketing Manager,Dunder Mifflin,201-500,1.9,"Bhubaneswar, Odisha",India,90,TRUE,FALSE,1,5,0,-1,,Marketing Manager | AI enthusiast | Building with LLMs
+0,trap,CAND_0035336,Saanvi Pandey,Project Manager,TCS,10001+,9.2,"Indore, Madhya Pradesh",India,60,FALSE,FALSE,1,6,0,-1,,Project Manager | Generative AI explorer
+0,trap,CAND_0011154,Rahul Ghosh,Marketing Manager,Wayne Enterprises,10001+,4.4,Berlin,Germany,60,FALSE,FALSE,1,7,0,-1,,Marketing Manager | Generative AI explorer
+0,trap,CAND_0082749,Vivaan Kapoor,Content Writer,Acme Corp,201-500,3,"Chandigarh, Chandigarh",India,120,TRUE,FALSE,1,6,0,22.2,,Content Writer | AI enthusiast | Building with LLMs
+0,trap,CAND_0050207,Myra Saxena,Graphic Designer,Infosys,10001+,3.7,New York,USA,90,FALSE,TRUE,1,8,0,-1,,Graphic Designer | Generative AI explorer
+0,trap,CAND_0003895,Tanvi Kapoor,Accountant,Wayne Enterprises,10001+,8.4,Toronto,Canada,60,FALSE,FALSE,1,9,0,-1,,Accountant | AI enthusiast | Building with LLMs
+0,trap,CAND_0084700,Shreya Khanna,HR Manager,Stark Industries,1001-5000,7.8,"Kochi, Kerala",India,60,FALSE,FALSE,1,8,0,-1,,HR Manager | AI enthusiast | Building with LLMs
+0,trap,CAND_0014631,Advik Iyer,Customer Support,Infosys,10001+,8.5,Berlin,Germany,150,TRUE,TRUE,1,8,0,-1,,Customer Support | Generative AI explorer
+0,trap,CAND_0013416,Aisha Rao,Customer Support,Wipro,10001+,13.6,"Bhubaneswar, Odisha",India,60,FALSE,TRUE,1,7,0,29.6,,Customer Support | AI enthusiast | Building with LLMs
+0,trap,CAND_0022540,Aryan Mittal,Customer Support,Acme Corp,201-500,5.8,"Vizag, Andhra Pradesh",India,150,TRUE,FALSE,1,5,0,-1,,Customer Support | Generative AI explorer
+0,trap,CAND_0060844,Amit Menon,Content Writer,TCS,10001+,5.8,"Bhubaneswar, Odisha",India,90,TRUE,FALSE,1,6,0,29.9,,Content Writer | AI enthusiast | Building with LLMs
