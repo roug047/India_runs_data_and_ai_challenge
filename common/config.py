@@ -73,3 +73,9 @@ SEED = 42
 FEATURES_PARQUET = ARTIFACTS / "features_100k.parquet"
 FEATURE_LIST_JSON = ARTIFACTS / "feature_list.json"
 FEATURE_REPORT_JSON = ARTIFACTS / "stage2_feature_report.json"
+
+CANDIDATE_TEXT_JSONL = ARTIFACTS / "candidate_texts.jsonl"
+CANDIDATE_EMBEDDINGS_NPY = ARTIFACTS / "candidate_embeddings.npy"
+CANDIDATE_EMB_IDS_JSON = ARTIFACTS / "candidate_embeddings_ids.json"
+BM25_SCORES_NPY = ARTIFACTS / "bm25_scores.npy"
+HYBRID_REPORT_JSON = ARTIFACTS / "stage3_hybrid_report.json"
