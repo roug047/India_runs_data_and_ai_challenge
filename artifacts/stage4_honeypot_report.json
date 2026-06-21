@@ -1,0 +1,39 @@
+{
+  "n": 100000,
+  "flagged_honeypots": 695,
+  "flag_rate_pct": 0.695,
+  "expected_honeypots_in_pool": "~80 (0.08%)",
+  "synthetic_recall": {
+    "8yr_role_but_2yr_career": {
+      "score": 0.0144,
+      "flagged": true,
+      "reasons": "role_exceeds_total_yoe;tenure_sum_grossly_exceeds_yoe"
+    },
+    "expert_10_skills_zero": {
+      "score": 0.018,
+      "flagged": true,
+      "reasons": "adv_expert_zero_duration=10;all_skills_zero_duration"
+    },
+    "skill_longer_than_career": {
+      "score": 0.12,
+      "flagged": true,
+      "reasons": "skill_duration_grossly_exceeds_career"
+    },
+    "tenure_sum_impossible": {
+      "score": 0.12,
+      "flagged": true,
+      "reasons": "tenure_sum_grossly_exceeds_yoe"
+    },
+    "date_mismatch": {
+      "score": 0.075,
+      "flagged": true,
+      "reasons": "date_duration_mismatch=2;yoe_exceeds_career_span"
+    }
+  },
+  "synthetic_recall_missed": [],
+  "score_distribution": {
+    "clean_1.0": 87354,
+    "soft_0.15_0.99": 11951,
+    "flagged_below_0.15": 695
+  }
+}

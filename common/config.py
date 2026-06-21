@@ -79,3 +79,5 @@ CANDIDATE_EMBEDDINGS_NPY = ARTIFACTS / "candidate_embeddings.npy"
 CANDIDATE_EMB_IDS_JSON = ARTIFACTS / "candidate_embeddings_ids.json"
 BM25_SCORES_NPY = ARTIFACTS / "bm25_scores.npy"
 HYBRID_REPORT_JSON = ARTIFACTS / "stage3_hybrid_report.json"
+
+HONEYPOT_REPORT_JSON = ARTIFACTS / "stage4_honeypot_report.json"
