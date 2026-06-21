@@ -26,7 +26,7 @@ PENALTY = {
     "langchain_only_under_12mo":    0.25,   # "we will probably not move forward, unless..."
     "no_code_18mo":                 0.30,   # "we will probably not move forward"
     "closed_source_no_validation":  0.35,   # "we need to see how you think"
-    "title_chaser":                 0.55,   # soft-negative, penalize not reject
+    "title_chaser":                 0.80,   # soft-negative, penalize not reject (edit: 0.55 changed to 0.80 itle_chaser should be a gentler penalty and harder to trigger).
 }
 
 
@@ -89,10 +89,10 @@ def compute_disqualifiers(c: dict, jd_config: dict, groups: dict, feats: dict,
     flags["closed_source_no_validation"] = float(long_closed and not has_external)
 
     # 7. title_chaser — short average tenure with title-climbing pattern.
-    if len(hist) >= 3:
+    if len(hist) >= 4: #edit: 3 changed to 4 to tighten the trigger so it needs a genuine pattern.
         durations = [r.get("duration_months", 0) for r in hist if not r.get("is_current")]
         avg_tenure = sum(durations) / len(durations) if durations else 99
-        flags["title_chaser"] = float(avg_tenure < 18)
+        flags["title_chaser"] = float(avg_tenure < 15) #edit: 18 to 15 early roles dont trip title chaser penalty.
     else:
         flags["title_chaser"] = 0.0
 

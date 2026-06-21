@@ -1,0 +1,43 @@
+{
+  "anchor_size": 60,
+  "default_spearman": 0.7196,
+  "best_spearman": 0.7296,
+  "hard_gate_pass": true,
+  "hard_gate_violations": 0,
+  "chosen_weights": {
+    "weighted_hard_req_coverage": 0.2374,
+    "production_evidence_score": 0.1479,
+    "hybrid_score": 0.1469,
+    "weighted_soft_req_coverage": 0.1741,
+    "yoe_fit": 0.0772,
+    "location_score": 0.1177,
+    "shipped_relevant_system": 0.0989
+  },
+  "label3_full_ranks": [
+    1,
+    55,
+    70,
+    71,
+    96,
+    106,
+    139,
+    399,
+    476,
+    1452,
+    1640
+  ],
+  "label0_full_ranks_sample": [
+    3624,
+    3791,
+    6866,
+    6901,
+    8430,
+    8765,
+    14155,
+    14959,
+    18100,
+    19715
+  ],
+  "label3_median_rank": 106,
+  "label0_median_rank": 44686
+}

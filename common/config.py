@@ -81,3 +81,7 @@ BM25_SCORES_NPY = ARTIFACTS / "bm25_scores.npy"
 HYBRID_REPORT_JSON = ARTIFACTS / "stage3_hybrid_report.json"
 
 HONEYPOT_REPORT_JSON = ARTIFACTS / "stage4_honeypot_report.json"
+
+COMPOSITE_WEIGHTS_JSON = ARTIFACTS / "composite_weights.json"
+CALIBRATION_REPORT_JSON = ARTIFACTS / "stage5_calibration_report.json"
+SUBMISSION_ONE_CSV = ARTIFACTS / "submission_one.csv"

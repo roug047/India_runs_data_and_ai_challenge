@@ -29,7 +29,7 @@ SKILL_GROUPS: dict[str, list[str]] = {
         "bge", "e5", "openai embeddings", "semantic search", "dense retrieval",
         "bi-encoder", "biencoder", "vector embedding", "text embedding", "retrieval",
         "embedding drift", "index refresh", "retrieval quality", "rag",
-        "retrieval augmented", "nearest neighbor", "ann", "knn search",
+        "retrieval augmented", "nearest neighbor", "ann", "knn search", "recommendation system", "personalization", "candidate generation", "two-tower", "retrieval model"
     ],
     "vector_search_infra": [
         "pinecone", "weaviate", "qdrant", "milvus", "opensearch", "elasticsearch",
@@ -40,7 +40,7 @@ SKILL_GROUPS: dict[str, list[str]] = {
         "ndcg", "mrr", "map", "mean average precision", "mean reciprocal rank",
         "precision@k", "recall@k", "a/b test", "ab test", "ab testing", "offline evaluation",
         "online evaluation", "offline-to-online", "ranking metric", "evaluation framework",
-        "relevance evaluation", "ranking evaluation", "experimentation", "holdout",
+        "relevance evaluation", "ranking evaluation", "experimentation", "holdout", "collaborative filtering", "matrix factorization", "re-ranking", "reranking", "recommendation", "recommender", "recsys", "candidate ranking"
     ],
     "python_production": [
         "python", "pytest", "type hints", "production code", "code review", "ci/cd",
