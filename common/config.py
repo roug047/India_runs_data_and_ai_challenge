@@ -69,3 +69,7 @@ def ensure_artifacts() -> None:
 
 # Random seed used wherever sampling happens, for reproducibility.
 SEED = 42
+
+FEATURES_PARQUET = ARTIFACTS / "features_100k.parquet"
+FEATURE_LIST_JSON = ARTIFACTS / "feature_list.json"
+FEATURE_REPORT_JSON = ARTIFACTS / "stage2_feature_report.json"
