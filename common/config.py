@@ -85,3 +85,17 @@ HONEYPOT_REPORT_JSON = ARTIFACTS / "stage4_honeypot_report.json"
 COMPOSITE_WEIGHTS_JSON = ARTIFACTS / "composite_weights.json"
 CALIBRATION_REPORT_JSON = ARTIFACTS / "stage5_calibration_report.json"
 SUBMISSION_ONE_CSV = ARTIFACTS / "submission_one.csv"
+
+TRAIN_LABELS_RULE_JSON = ARTIFACTS / "train_labels_rule.json"
+TRAIN_LABELS_LLM_JSON = ARTIFACTS / "train_labels_llm.json"
+RANKER_RULE_TXT = ARTIFACTS / "ranker_rule.txt"
+RANKER_LLM_TXT = ARTIFACTS / "ranker_llm.txt"
+BLEND_JSON = ARTIFACTS / "blend.json"
+LGB_FEATURES_JSON = ARTIFACTS / "lgb_features.json"
+STAGE6_REPORT_JSON = ARTIFACTS / "stage6_report.json"
+
+# Stage 7 outputs
+AUDIT_LOG_JSON = ARTIFACTS / "audit_log.json"
+REASONING_CACHE_JSON = ARTIFACTS / "reasoning_cache.json"
+TOP40_REVIEW_CSV = ARTIFACTS / "top40_review.csv"
+SUBMISSION_TWO_CSV = ARTIFACTS / "submission_two.csv"
