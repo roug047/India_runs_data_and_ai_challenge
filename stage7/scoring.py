@@ -88,5 +88,16 @@ def compute_final_scores(df, artifacts_dir):
     dq = df["disqualifier_penalty"].fillna(1.0).astype("float64").values \
         if "disqualifier_penalty" in df.columns else np.ones(len(df))
 
-    final = np.asarray(base) * hp * dq
+    # location gate: rank-averaging dilutes the composite's location penalty. Re-apply it,
+    # but ONLY to overseas candidates who WON'T relocate. A candidate who has committed to
+    # relocating to India has removed the location obstacle — they compete on pure merit
+    # (no penalty). Won't-relocate overseas candidates sink (no visa sponsorship per JD).
+    if "location_score" in df.columns:
+        locs = df["location_score"].fillna(0.5).astype("float64").values
+        # location_score <=0.1 = overseas WON'T-relocate; ~0.4 = overseas WILL-relocate (no penalty)
+        loc_mult = np.where(locs <= 0.1, 0.30, 1.0)
+    else:
+        loc_mult = np.ones(len(df))
+
+    final = np.asarray(base) * hp * dq * loc_mult
     return pd.Series(final, index=df.index)
