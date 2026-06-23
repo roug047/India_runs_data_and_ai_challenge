@@ -57,12 +57,14 @@ def build_reasoning(c: dict, row: dict) -> str:
     if quote:
         bits.append(quote[:160])
 
-    # 3. which SPECIFIC hard requirement they cover best (varies, from features)
+    # 3. which SPECIFIC hard requirement they cover best (varies, from features).
+    #    Framed as an explicit assessment ("covers...") grounded in the coverage feature,
+    #    NOT as a claim about what the candidate literally did — avoids over-asserting.
     covered = [(lbl, row.get(col, 0)) for col, lbl in _HARD_REQ_LABEL.items()]
     covered = [(lbl, v) for lbl, v in covered if v and v > 0.3]
     covered.sort(key=lambda t: -t[1])
     if covered:
-        bits.append("strong on " + ", ".join(lbl for lbl, _ in covered[:2]))
+        bits.append("covers JD requirements: " + ", ".join(lbl for lbl, _ in covered[:2]))
 
     # 4. one concrete logistics/availability fact (varies)
     sig = c["redrob_signals"]
