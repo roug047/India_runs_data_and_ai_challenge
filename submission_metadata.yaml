@@ -1,0 +1,40 @@
+# submission_metadata.yaml
+# Mirrors the portal metadata (submission_spec Section 10.2).
+# Fill in the bracketed values before submitting.
+
+team_name: "[YOUR TEAM NAME]"
+
+primary_contact:
+  name: "[PRIMARY CONTACT NAME]"
+  email: "[PRIMARY CONTACT EMAIL]"
+  phone: "[PRIMARY CONTACT PHONE]"
+
+team_members:
+  - name: "[YOUR NAME]"
+    email: "[YOUR EMAIL]"
+  - name: "[PARTNER NAME]"
+    email: "[PARTNER EMAIL]"
+
+github_repository: "https://github.com/[USERNAME]/[REPO]"
+
+sandbox_demo_link: "[COLAB / HF SPACE / DOCKER LINK — see README 'Sandbox' section]"
+
+ai_tools_declared:
+  - Claude
+  # add any others you used: ChatGPT / Copilot / Cursor / Gemini / Other
+
+compute_environment: "Windows laptop, RTX 4050 6GB (precompute only), 16GB RAM, Python 3.11. Ranking step is CPU-only."
+
+methodology_summary: >
+  A 7-stage pipeline that ranks candidates by career evidence over keyword claims.
+  Requirement coverage weights what a candidate has built (career descriptions) above
+  what they list as skills, and discounts skill claims contradicted by on-platform
+  assessment scores — defeating keyword-stuffers. Hybrid retrieval (bge-large dense +
+  BM25) surfaces strong fits who don't use JD buzzwords. A precision-first honeypot
+  detector flags subtly impossible profiles (e.g. summary-claimed YOE contradicting the
+  YOE field). Final scores come from a rank-average of a transparent feature composite
+  and a LightGBM lambdarank model, selected by 5-fold cross-validation on a 95-candidate
+  hand-labeled anchor (held-out Spearman 0.85). The ranking step (rank.py) is CPU-only,
+  no network, runs in ~8 seconds on precomputed artifacts. Zero paid API: embeddings and
+  training labels are produced locally. A hard gate (no unfit candidate may outrank a
+  strong fit) drove iterative debugging that surfaced and fixed real systematic biases.
