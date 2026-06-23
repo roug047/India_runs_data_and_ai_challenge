@@ -1,0 +1,9 @@
+{
+  "weighted_hard_req_coverage": 0.3096,
+  "production_evidence_score": 0.1038,
+  "hybrid_score": 0.2516,
+  "weighted_soft_req_coverage": 0.0924,
+  "yoe_fit": 0.1281,
+  "location_score": 0.0396,
+  "shipped_relevant_system": 0.0748
+}

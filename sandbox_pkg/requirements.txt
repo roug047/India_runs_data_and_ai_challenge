@@ -1,0 +1,13 @@
+# Runtime dependencies for the ranking step (rank.py) — CPU only, no network.
+# Pinned to the versions used in development. The ranking step needs only these.
+pandas==2.2.2
+numpy==1.26.4
+lightgbm==4.5.0
+pyarrow==17.0.0
+
+# Precompute-only (NOT needed by rank.py; needed to regenerate embeddings/labels):
+#   sentence-transformers==3.0.1
+#   transformers==4.46.3
+#   torch==2.6.0
+#   rank-bm25==0.2.2
+#   llama-cpp-python==0.3.31   (local LLM labeling, optional)

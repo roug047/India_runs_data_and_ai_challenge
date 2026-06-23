@@ -1,0 +1,101 @@
+"""
+common/config.py
+Single source of truth for paths and the (empirically-derived) reference date.
+
+Architecture V6 — shared across all stages. Importing this from any stage script
+guarantees every stage reads/writes the same artifact locations and uses the SAME
+reference date (derived once in Stage 0, then frozen to artifacts/reference_date.json).
+
+NOTHING here computes features or rankings. Paths + constants only.
+"""
+from __future__ import annotations
+import json
+import os
+from datetime import date
+from pathlib import Path
+
+# ---------------------------------------------------------------------------
+# Repo-root resolution: this file lives at <repo>/common/config.py
+# ---------------------------------------------------------------------------
+REPO_ROOT = Path(__file__).resolve().parents[1]
+print("REPO_ROOT =", REPO_ROOT)
+
+# Input data (provided by organizers) — live at repo root in your layout
+CANDIDATES_JSONL = REPO_ROOT / "candidates.jsonl"          # 100K, line-delimited
+SAMPLE_CANDIDATES = REPO_ROOT / "sample_candidates.json"   # 50, JSON array
+CANDIDATE_SCHEMA = REPO_ROOT / "candidate_schema.json"
+JD_MD = REPO_ROOT / "job_description.md"
+JD_DOCX = REPO_ROOT / "job_description.docx" 
+SAMPLE_SUBMISSION = REPO_ROOT / "sample_submission.csv"
+
+# Output artifacts (shared, git-ignored except the small human-owned ones)
+ARTIFACTS = REPO_ROOT / "artifacts"
+
+# Stage 0 outputs
+REFERENCE_DATE_JSON = ARTIFACTS / "reference_date.json"
+DATA_REPORT_JSON = ARTIFACTS / "stage0_data_report.json"
+NAIVE_BASELINE_JSON = ARTIFACTS / "naive_baseline_top100.json"
+ANCHOR_CANDIDATES_JSON = ARTIFACTS / "anchor_candidates.json"        # the 60 IDs to label
+ANCHOR_WORKSHEET_CSV = ARTIFACTS / "golden_set_worksheet.csv"        # human fills this
+GOLDEN_SET_JSON = ARTIFACTS / "golden_set.json"                      # final labels (human-owned)
+
+# Stage 1 outputs
+JD_CONFIG_JSON = ARTIFACTS / "jd_config.json"
+SKILL_GROUPS_JSON = ARTIFACTS / "skill_groups.json"
+JD_EMBEDDING_NPY = ARTIFACTS / "jd_embedding.npy"
+IDEAL_EMBEDDING_NPY = ARTIFACTS / "ideal_embedding.npy"
+JD_TEXT_CACHE = ARTIFACTS / "jd_text.txt"
+
+# Fallback reference date ONLY used if Stage 0 hasn't been run yet.
+# Real value is derived empirically in stage0 and written to REFERENCE_DATE_JSON.
+_FALLBACK_REFERENCE_DATE = date(2026, 6, 6)
+
+
+def get_reference_date() -> date:
+    """
+    Return the frozen, empirically-derived reference date.
+    Stage 0 writes artifacts/reference_date.json; every later stage reads it here
+    so recency-weighted features are consistent everywhere.
+    """
+    if REFERENCE_DATE_JSON.exists():
+        d = json.loads(REFERENCE_DATE_JSON.read_text())["reference_date"]
+        return date.fromisoformat(d)
+    return _FALLBACK_REFERENCE_DATE
+
+
+def ensure_artifacts() -> None:
+    ARTIFACTS.mkdir(parents=True, exist_ok=True)
+
+
+# Random seed used wherever sampling happens, for reproducibility.
+SEED = 42
+
+FEATURES_PARQUET = ARTIFACTS / "features_100k.parquet"
+FEATURE_LIST_JSON = ARTIFACTS / "feature_list.json"
+FEATURE_REPORT_JSON = ARTIFACTS / "stage2_feature_report.json"
+
+CANDIDATE_TEXT_JSONL = ARTIFACTS / "candidate_texts.jsonl"
+CANDIDATE_EMBEDDINGS_NPY = ARTIFACTS / "candidate_embeddings.npy"
+CANDIDATE_EMB_IDS_JSON = ARTIFACTS / "candidate_embeddings_ids.json"
+BM25_SCORES_NPY = ARTIFACTS / "bm25_scores.npy"
+HYBRID_REPORT_JSON = ARTIFACTS / "stage3_hybrid_report.json"
+
+HONEYPOT_REPORT_JSON = ARTIFACTS / "stage4_honeypot_report.json"
+
+COMPOSITE_WEIGHTS_JSON = ARTIFACTS / "composite_weights.json"
+CALIBRATION_REPORT_JSON = ARTIFACTS / "stage5_calibration_report.json"
+SUBMISSION_ONE_CSV = ARTIFACTS / "submission_one.csv"
+
+TRAIN_LABELS_RULE_JSON = ARTIFACTS / "train_labels_rule.json"
+TRAIN_LABELS_LLM_JSON = ARTIFACTS / "train_labels_llm.json"
+RANKER_RULE_TXT = ARTIFACTS / "ranker_rule.txt"
+RANKER_LLM_TXT = ARTIFACTS / "ranker_llm.txt"
+BLEND_JSON = ARTIFACTS / "blend.json"
+LGB_FEATURES_JSON = ARTIFACTS / "lgb_features.json"
+STAGE6_REPORT_JSON = ARTIFACTS / "stage6_report.json"
+
+# Stage 7 outputs
+AUDIT_LOG_JSON = ARTIFACTS / "audit_log.json"
+REASONING_CACHE_JSON = ARTIFACTS / "reasoning_cache.json"
+TOP40_REVIEW_CSV = ARTIFACTS / "top40_review.csv"
+SUBMISSION_TWO_CSV = ARTIFACTS / "submission_two.csv"
