@@ -1,9 +1,9 @@
 {
-  "weighted_hard_req_coverage": 0.2374,
-  "production_evidence_score": 0.1479,
-  "hybrid_score": 0.1469,
-  "weighted_soft_req_coverage": 0.1741,
-  "yoe_fit": 0.0772,
-  "location_score": 0.1177,
-  "shipped_relevant_system": 0.0989
+  "weighted_hard_req_coverage": 0.2491,
+  "production_evidence_score": 0.2808,
+  "hybrid_score": 0.169,
+  "weighted_soft_req_coverage": 0.0582,
+  "yoe_fit": 0.1256,
+  "location_score": 0.0337,
+  "shipped_relevant_system": 0.0837
 }

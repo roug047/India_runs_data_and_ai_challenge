@@ -76,12 +76,30 @@ def honeypot_signals(c: dict) -> dict:
         penalty *= 0.6                     # soft: suspicious but not decisive
         reasons.append("adv_expert_zero_duration=3")
 
-    # --- SIGNAL 4: a single skill claimed for grossly more time than the whole career ---
+    # --- SIGNAL 4: a single skill claimed for ABSURDLY more time than the whole career ---
+    # LOOSENED (v6.2): the old +36mo threshold false-positived on real engineers who used a
+    # skill across overlapping roles / before counted experience. Real fits with 4yr YOE and
+    # a 70mo skill are NOT impossible. Only fire on the truly absurd: skill duration exceeds
+    # 2x the career span. This stops flagging genuine candidates.
+    career_span_mo = max(yoe * 12, sum(r.get("duration_months", 0) for r in hist))
     for s in skills:
-        if s.get("duration_months", 0) > (yoe * 12) + 36:   # >3yr beyond entire career
-            penalty *= 0.12
-            reasons.append("skill_duration_grossly_exceeds_career")
+        if s.get("duration_months", 0) > career_span_mo * 2 + 24:
+            penalty *= 0.20
+            reasons.append("skill_duration_absurd")
             break
+
+    # --- SIGNAL 4b: summary-claimed YOE contradicts the YOE field (STRONG honeypot tell) ---
+    # The planted honeypots inflate the summary ("7.4 years of experience") while the YOE
+    # field stays low (2.8). Real candidates' summary, field, and career all agree. Parse the
+    # first "<N> years" from the summary and compare to the field; >2.5yr gap = contradiction.
+    import re as _re
+    summary = c["profile"].get("summary", "")
+    m = _re.search(r"(\d+(?:\.\d+)?)\s*\+?\s*years", summary.lower())
+    if m:
+        claimed = float(m.group(1))
+        if abs(claimed - yoe) > 2.1:
+            penalty *= 0.10
+            reasons.append(f"summary_yoe_contradiction({claimed}vs{yoe})")
 
     # --- SIGNAL 5: role duration disagrees with its own start/end dates (multi-role) ---
     mismatches = 0
@@ -89,26 +107,22 @@ def honeypot_signals(c: dict) -> dict:
         real = _months(r.get("start_date"), r.get("end_date"))
         if real is not None and abs(real - r.get("duration_months", 0)) > 12:
             mismatches += 1
-    if mismatches >= 2:                     # need TWO to be decisive (one can be rounding)
-        penalty *= 0.25
+    if mismatches >= 3:                     # 3+ is decisive on its own
+        penalty *= 0.12
+        reasons.append(f"date_duration_mismatch={mismatches}")
+    elif mismatches >= 2:
+        penalty *= 0.14
         reasons.append(f"date_duration_mismatch={mismatches}")
 
-    # --- SIGNAL 6: YOE wildly exceeds time since first job started ---
-    starts = [r.get("start_date") for r in hist if r.get("start_date")]
-    if starts:
-        try:
-            first = min(datetime.strptime(s, "%Y-%m-%d") for s in starts)
-            # crude 'now' from the latest end/start in the profile; avoid importing ref here
-            latest = max(
-                [datetime.strptime(r["end_date"], "%Y-%m-%d")
-                 for r in hist if r.get("end_date")] +
-                [datetime.strptime(s, "%Y-%m-%d") for s in starts])
-            span_years = (latest - first).days / 365.0
-            if yoe > span_years + 4:        # claims 4+ more years than career span allows
-                penalty *= 0.30
-                reasons.append("yoe_exceeds_career_span")
-        except (ValueError, TypeError):
-            pass
+    # --- SIGNAL 6: YOE wildly exceeds the actual career span ---
+    # Use total career-months (which correctly counts current/ongoing roles) as the span.
+    # The old date-based version ignored current roles (end_date=None), giving span~0 for
+    # single-current-role candidates and false-firing. career_months is the honest span.
+    career_months_total = sum(r.get("duration_months", 0) for r in hist)
+    span_years = career_months_total / 12.0
+    if yoe > span_years + 4:        # claims 4+ more years than the career actually spans
+        penalty *= 0.30
+        reasons.append("yoe_exceeds_career_span")
 
     # --- SIGNAL 7: all-zero-duration skills with a large skill list (stuffed + impossible)
     n_skills = len(skills)
