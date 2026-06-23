@@ -1,7 +1,19 @@
+# Python
 __pycache__/
 *.pyc
+
+# Large regenerable artifacts (not needed by rank.py)
 *.npy
+artifacts/candidate_texts.jsonl
 models/
+
+# Test environments and outputs
+testenv/
 submission.csv
+test_submission.csv
 submission_root_test.csv
 stage*/check101.py
+
+# Organizer data (huge; organizers already have it)
+candidates.jsonl
+candidates.jsonl.gz
