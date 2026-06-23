@@ -1,24 +1,24 @@
 {
   "anchor_size": 95,
-  "reg_strength": 0.15,
-  "in_sample_spearman": 0.8094,
-  "cv_spearman": 0.8268,
+  "reg_strength": 0.1,
+  "in_sample_spearman": 0.8132,
+  "cv_spearman": 0.8341,
   "cv_per_fold": [
-    0.758,
-    0.83,
-    0.821,
-    0.835,
-    0.889
+    0.764,
+    0.845,
+    0.831,
+    0.86,
+    0.87
   ],
-  "hard_gate": false,
-  "hard_gate_violations": 4,
+  "hard_gate": true,
+  "hard_gate_violations": 0,
   "weights": {
-    "weighted_hard_req_coverage": 0.2491,
-    "production_evidence_score": 0.2808,
-    "hybrid_score": 0.169,
-    "weighted_soft_req_coverage": 0.0582,
-    "yoe_fit": 0.1256,
-    "location_score": 0.0337,
-    "shipped_relevant_system": 0.0837
+    "weighted_hard_req_coverage": 0.3096,
+    "production_evidence_score": 0.1038,
+    "hybrid_score": 0.2516,
+    "weighted_soft_req_coverage": 0.0924,
+    "yoe_fit": 0.1281,
+    "location_score": 0.0396,
+    "shipped_relevant_system": 0.0748
   }
 }

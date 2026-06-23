@@ -155,14 +155,36 @@ def production_evidence(c: dict, groups: dict) -> dict:
     ctext = career_text(c)
     prod_terms = groups.get("production_evidence", [])
     hits = _count_group_hits(ctext, prod_terms)
-    # also reward retrieval/ranking evidence appearing NEAR production language
+    # reward retrieval/ranking evidence appearing NEAR production language
     retr = groups.get("embeddings_retrieval", []) + groups.get("vector_search_infra", [])
+    ranking = groups.get("ranking_evaluation", [])
+    pyprod = groups.get("python_production", [])
     retr_hits = _count_group_hits(ctext, retr)
-    score = (1 - 0.6 ** hits) if hits else 0.0
-    shipped_relevant = 1.0 if (hits and retr_hits) else 0.0
+    # technical context from ROLE DESCRIPTIONS ONLY (not the summary). Keyword-stuffers put AI
+    # buzzwords in their candidate-authored summary ("excited about GenAI"); real engineers
+    # describe ML work in their actual role descriptions. Scanning roles-only defeats the leak.
+    role_text = " ".join(r.get("description", "").lower()
+                         for r in c.get("career_history", []))
+    tech_context = (_count_group_hits(role_text, retr) +
+                    _count_group_hits(role_text, ranking) +
+                    _count_group_hits(role_text, pyprod) +
+                    _count_group_hits(role_text, groups.get("nlp_ir", [])) +
+                    _count_group_hits(role_text, groups.get("llm_finetuning", [])) +
+                    _count_group_hits(role_text, groups.get("learning_to_rank", [])) +
+                    _count_group_hits(role_text, groups.get("hybrid_retrieval", [])))
+    raw_score = (1 - 0.6 ** hits) if hits else 0.0
+    # if there's NO technical context in the role descriptions, production language is almost
+    # certainly non-ML (operations, manufacturing, delivery) — heavily discount it.
+    if tech_context == 0:
+        raw_score *= 0.15
+    elif tech_context == 1:
+        raw_score *= 0.6
+    score = raw_score
+    shipped_relevant = 1.0 if (hits and retr_hits and tech_context >= 1) else 0.0
     return {
         "production_evidence_score": round(score, 3),
         "production_hit_count": hits,
+        "production_tech_context": tech_context,
         "shipped_relevant_system": shipped_relevant,
     }
 
