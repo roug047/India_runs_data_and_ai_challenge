@@ -1,2 +1,11 @@
 
 candidates.jsonl
+__pycache__/
+*.pyc
+*.npy
+models/
+submission.csv
+submission_root_test.csv
+artifacts/candidate_texts.jsonl
+artifacts/check101.py
+stage5/check101.py

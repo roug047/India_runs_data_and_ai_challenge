@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 import sys; sys.path.insert(0, ".")
-from data_io import iter_candidates
+from common.io import iter_candidates
 
 CID = sys.argv[1]  # e.g. CAND_0012345
 for c in iter_candidates(Path("candidates.jsonl")):

@@ -1,0 +1,13 @@
+{
+  "n_features": 58,
+  "rule_label_dist": {
+    "0": 2283,
+    "1": 1078,
+    "2": 525,
+    "3": 82
+  },
+  "llm_labels": 3968,
+  "alpha_rule": 0.25,
+  "anchor_ndcg10": 0.9535,
+  "anchor_spearman_ranker": 0.7615
+}

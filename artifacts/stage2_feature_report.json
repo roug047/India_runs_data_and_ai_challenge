@@ -1,23 +1,23 @@
 {
   "n": 100000,
-  "n_features": 52,
-  "numeric_features": 52,
-  "disqualifier_hit_rate": 0.288,
+  "n_features": 53,
+  "numeric_features": 53,
+  "disqualifier_hit_rate": 0.255,
   "means": {
-    "weighted_hard_req_coverage": 0.092,
-    "production_evidence_score": 0.242,
+    "weighted_hard_req_coverage": 0.096,
+    "production_evidence_score": 0.154,
     "yoe_fit": 0.513,
     "location_score": 0.585,
     "availability_score": 0.435,
-    "keyword_evidence_gap": 0.092
+    "keyword_evidence_gap": 0.111
   },
   "disqualifier_breakdown": {
     "pure_research_no_prod": 0,
     "pure_consulting_career": 9749,
     "cv_speech_robotics_only": 9544,
-    "langchain_only_under_12mo": 0,
+    "langchain_only_under_12mo": 39,
     "no_code_18mo": 7161,
     "closed_source_no_validation": 472,
-    "title_chaser": 4457
+    "title_chaser": 338
   }
 }

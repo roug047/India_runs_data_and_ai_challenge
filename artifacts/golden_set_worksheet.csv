@@ -40,7 +40,7 @@ label,bucket,candidate_id,name,title,company,size,yoe,location,country,notice_da
 3,strong,CAND_0083307,Neha Patel,Search Engineer,CRED,1001-5000,7.8,"Vizag, Andhra Pradesh",India,120,FALSE,TRUE,10,7,1,69.2,,"Search Engineer | Search, Ranking & Retrieval"
 3,strong,CAND_0054703,Sai Shetty,Computer Vision Engineer,Razorpay,1001-5000,6.8,"Vizag, Andhra Pradesh",India,60,TRUE,TRUE,3,4,1,-1,,Computer Vision Engineer | Data Science & ML enthusiast
 3,strong,CAND_0039383,Riya Malhotra,Applied ML Engineer,Meesho,1001-5000,7.1,"Gurgaon, Haryana",India,90,TRUE,TRUE,8,7,1,86.4,,Applied ML Engineer | Applied ML | Building intelligent products
-3,strong,CAND_0092278,Ananya Arora,Senior NLP Engineer,Microsoft,10001+,6.8,"Pune, Maharashtra",India,90,FALSE,FALSE,9,7,1,-1,,Senior NLP Engineer | Building AI-native search & ranking systems
+2,strong,CAND_0092278,Ananya Arora,Senior NLP Engineer,Microsoft,10001+,6.8,"Pune, Maharashtra",India,90,FALSE,FALSE,9,7,1,-1,,Senior NLP Engineer | Building AI-native search & ranking systems
 2,strong,CAND_0035764,Amit Chowdary,Senior Software Engineer (ML),Zomato,5001-10000,6.8,"Kochi, Kerala",India,90,FALSE,TRUE,3,5,1,-1,,Senior Software Engineer (ML) | Data Science & ML enthusiast
 2,strong,CAND_0056262,Ayaan Tiwari,Junior ML Engineer,Swiggy,5001-10000,6,"Bangalore, Karnataka",India,90,TRUE,FALSE,3,4,1,17.4,,Junior ML Engineer | Data Science & ML enthusiast
 3,strong,CAND_0052328,Vikram Banerjee,Recommendation Systems Engineer,Amazon,10001+,6.5,"Pune, Maharashtra",India,30,FALSE,TRUE,5,6,1,77.6,,"Recommendation Systems Engineer | Search, Ranking & Retrieval"

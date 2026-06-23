@@ -15,7 +15,6 @@
   "cov_vector_search_infra",
   "cv_speech_robotics_only",
   "days_inactive",
-  "disqualifier_hit",
   "disqualifier_penalty",
   "edu_tech_field",
   "edu_tier_best",
@@ -38,7 +37,6 @@
   "open_to_work",
   "production_evidence_score",
   "production_hit_count",
-  "production_tech_context",
   "pure_consulting_career",
   "pure_research_no_prod",
   "recruiter_response_rate",
@@ -51,5 +49,12 @@
   "weighted_soft_req_coverage",
   "willing_to_relocate",
   "years_of_experience",
-  "yoe_fit"
+  "yoe_fit",
+  "dense_score",
+  "dense_sim_jd",
+  "dense_sim_ideal",
+  "bm25_score",
+  "hybrid_score",
+  "honeypot_score",
+  "honeypot_signal_count"
 ]
