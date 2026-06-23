@@ -1,0 +1,38 @@
+{
+  "engine": "rank_average",
+  "results": {
+    "composite": {
+      "cv_spearman": 0.8341,
+      "cv_ndcg10": 0.9559,
+      "per_fold_spearman": [
+        0.764,
+        0.845,
+        0.831,
+        0.86,
+        0.87
+      ]
+    },
+    "ranker": {
+      "cv_spearman": 0.7103,
+      "cv_ndcg10": 0.8564,
+      "per_fold_spearman": [
+        0.473,
+        0.855,
+        0.765,
+        0.719,
+        0.74
+      ]
+    },
+    "rank_average": {
+      "cv_spearman": 0.8513,
+      "cv_ndcg10": 0.9649,
+      "per_fold_spearman": [
+        0.816,
+        0.873,
+        0.785,
+        0.913,
+        0.87
+      ]
+    }
+  }
+}
