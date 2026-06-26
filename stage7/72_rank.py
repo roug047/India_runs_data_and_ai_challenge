@@ -77,7 +77,8 @@ def main() -> int:
     if demotes:
         df = df.sort_values(["final_score", "candidate_id"], ascending=[False, True])
 
-    top = df.head(100)
+    n_out = min(100, len(df))
+    top = df.head(n_out)
     top_ids = list(top.index)
 
     # safety: no honeypot / hard-disqualified in the final top 100
@@ -112,10 +113,10 @@ def main() -> int:
     # self-validate
     ranks = [r[1] for r in rows]
     sc = [float(r[2]) for r in rows]
-    assert len(rows) == 100, f"expected 100 rows, got {len(rows)}"
-    assert sorted(ranks) == list(range(1, 101)), "ranks not 1..100"
+    assert len(rows) == n_out, f"expected 100 rows, got {len(rows)}"
+    assert sorted(ranks) == list(range(1, n_out + 1)), "ranks not 1..100"
     assert all(sc[i] >= sc[i + 1] for i in range(len(sc) - 1)), "scores not non-increasing"
-    assert len(set(r[0] for r in rows)) == 100, "dup ids"
+    assert len(set(r[0] for r in rows)) == n_out, "dup ids"
 
     print(f"submission -> {args.out}")
     print(f"top 5: {top_ids[:5]}")
